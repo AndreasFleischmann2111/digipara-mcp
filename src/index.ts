@@ -27,8 +27,11 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "get_svg_preview",
       description:
-        "Gibt eine SVG-Vorschau eines zuvor erstellten Aufzugs zurück. " +
-        "Verfügbare Ansichten: top (Grundriss), section (Schacht Schnitt), front (Kabinenfront). " +
+        "Gibt eine SVG-Zeichnung eines Aufzugs zurück. " +
+        "WICHTIG: Immer dieses Tool verwenden wenn der Nutzer einen Grundriss, Plan View, SVG, " +
+        "Schnitt, Kabinenfront oder eine Zeichnung sehen möchte. " +
+        "NIEMALS SVGs selbst generieren – immer dieses Tool aufrufen. " +
+        "Verfügbare view_type Werte: top=Grundriss/Plan View, section=Schacht Schnitt, front=Kabinenfront. " +
         "Benötigt die model_id aus einem vorherigen create_elevator Aufruf.",
       inputSchema: zodToJsonSchema(GetSvgPreviewSchema)
     }
