@@ -17,7 +17,6 @@ export interface DrawingView {
   name: string;
   type: "front" | "side" | "top" | "section";
   dwg_block_name: string;
-  svg_preview_url: string;
 }
 
 export function mockLdoopResponse(
@@ -42,20 +41,17 @@ export function mockLdoopResponse(
       {
         name: "Schacht Grundriss",
         type: "top",
-        dwg_block_name: `${manufacturer}_shaft_plan_${load_kg}kg`,
-        svg_preview_url: `https://api.digipara.com/preview/${manufacturer}/plan`
+        dwg_block_name: `${manufacturer}_shaft_plan_${load_kg}kg`
       },
       {
         name: "Schacht Schnitt",
         type: "section",
-        dwg_block_name: `${manufacturer}_shaft_section_${load_kg}kg`,
-        svg_preview_url: `https://api.digipara.com/preview/${manufacturer}/section`
+        dwg_block_name: `${manufacturer}_shaft_section_${load_kg}kg`
       },
       {
         name: "Kabinenfront",
         type: "front",
-        dwg_block_name: `${manufacturer}_car_front_${load_kg}kg`,
-        svg_preview_url: `https://api.digipara.com/preview/${manufacturer}/front`
+        dwg_block_name: `${manufacturer}_car_front_${load_kg}kg`
       }
     ],
     created_at: new Date().toISOString(),

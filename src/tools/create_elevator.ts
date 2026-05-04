@@ -60,12 +60,14 @@ export async function createElevator(input: CreateElevatorInput): Promise<string
    Sondermerkmale: ${result.special_features.join(", ") || "keine"}
 
 📄 Verfügbare Ansichten (${result.views.length}):
-${result.views.map(v => `   • ${v.name} → Block: ${v.dwg_block_name}`).join("\n")}
+${result.views.map(v => `   • ${v.name} (${v.type})`).join("\n")}
 
-🔗 Nächste Schritte:
-   - SVG Grundriss: get_svg_preview(model_id: "${result.model_id}", view_type: "top")
-   - DWG Export: digipara.com/export/${result.model_id}
-   - BIM/IFC:    digipara.com/bim/${result.model_id}
+⚡ Nächste Schritte – verwende diese MCP Tools:
+   - Grundriss anzeigen:  get_svg_preview mit model_id="${result.model_id}" und view_type="top"
+   - Schnitt anzeigen:    get_svg_preview mit model_id="${result.model_id}" und view_type="section"
+   - Kabinenfront:        get_svg_preview mit model_id="${result.model_id}" und view_type="front"
+
+⚠️ Wichtig: Rufe KEINE externen URLs auf. Nutze ausschließlich das get_svg_preview MCP Tool.
 `.trim();
 
   return summary;
