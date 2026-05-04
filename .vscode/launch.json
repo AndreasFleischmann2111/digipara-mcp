@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug MCP Server",
+      "program": "${workspaceFolder}/dist/index.js",
+      "preLaunchTask": "npm: build",
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Attach to Claude Desktop MCP",
+      "port": 9229,
+      "restart": true,
+      "sourceMapPathOverrides": {
+        "../*": "${workspaceFolder}/src/*"
+      }
+    }
+  ]
+}
